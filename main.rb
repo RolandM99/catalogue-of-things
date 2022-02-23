@@ -7,19 +7,14 @@ class Main
 
   def run
     puts '*************CATALOGUE OF MY THINGS************'
-    puts '             ==============================          '
+    puts '             =======================          '
     puts 'Welcome to Catalogue of thi!'
     loop do
       menu
       option = gets.chomp
       break if option == '14'
-
-      # @itmes.get_num option
     end
-    # #To customize to our app
-    # @app.save_people
-    # @app.save_books
-    # @app.save_rental
+
     puts 'Thank you for using our Library!'
   end
 
