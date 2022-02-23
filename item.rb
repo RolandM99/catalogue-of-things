@@ -12,22 +12,23 @@ class Item
 
   def add_genre(genre)
     @genre = genre
-    @genre.items << self
+    # @genre.add_item(self)
+    # genre.items.push(self) unless genre.items.include?(self)
   end
 
   def add_author(author)
     @author = author
-    @author.items << self
+    @author.add_item(self)
   end
 
   def add_source(source)
     @source = source
-    @source.items << self
+    @source.add_item(self)
   end
 
   def add_label(label)
     @label = label
-    @label.items << self
+    @label.add_item(self)
   end
 
   def move_to_archive
@@ -35,11 +36,6 @@ class Item
   end
 
   private
-
-  def role
-    'parent'
-  end
-
   def can_be_archived?
     current_year = Time.new.year
     publish_year = Date.strptime(@publish_date, '%Y-%m-%d').strftime('%Y').to_i
