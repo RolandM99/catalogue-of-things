@@ -7,7 +7,7 @@ class Game < Item
 
   def initialize(multiplayer, last_played_date, publish_date)
     super(id, publish_date)
-    @last_played_date = Date.parse(last_played_date)
+    @last_played_date = last_played_date
     @multiplayer = multiplayer
   end
     
@@ -19,9 +19,10 @@ class Game < Item
   end
 end
 
-game1 = Game.new('yes','2018-04-7','2020-04-7')
+game1 = Game.new('yes','2018/04/7','2020-04-7')
 puts game1.multiplayer
 puts game1.last_played_date
+puts game1.publish_date
 
 
 
