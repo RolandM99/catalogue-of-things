@@ -9,19 +9,18 @@ class Genre
     end
 
     def add_item(item)
-        item.add_genre(self)
         @items << item unless @items.include?(item)
-        # item.genre(self) 
+        item.genre = self
     end
         
 end
 
 
-genre =Genre.new('Way to the moon')
+# genre =Genre.new('Way to the moon')
 
-genre.add_item('hipop')
-genre.add_item('hindi')
-genre.add_item('work')
-genre.add_item('Rumba')
+# genre.add_item('hipop')
+# genre.add_item('hindi')
+# genre.add_item('work')
+# genre.add_item('Rumba')
 
-print genre.items
+# print genre.items
