@@ -5,7 +5,6 @@ class Item
   attr_reader :id, :archived
 
   def initialize(id, publish_date, archived: true)
-    # @time = time
     @id = id
     @publish_date = publish_date
     @archived = archived
@@ -33,7 +32,6 @@ class Item
 
   def move_to_archive
     @archived = true if can_be_archived?
-    # can_be_archived?
   end
 
   private
@@ -48,5 +46,3 @@ class Item
     current_year - publish_year >= 10
   end
 end
-
-puts Item.new(1, '2000-04-7').move_to_archive
