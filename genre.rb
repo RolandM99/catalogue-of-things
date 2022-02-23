@@ -16,10 +16,3 @@ class Genre
 end
 
 # genre =Genre.new('Way to the moon')
-
-# genre.add_item('hipop')
-# genre.add_item('hindi')
-# genre.add_item('work')
-# genre.add_item('Rumba')
-
-# print genre.items
