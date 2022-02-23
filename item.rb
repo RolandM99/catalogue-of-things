@@ -36,6 +36,7 @@ class Item
   end
 
   private
+
   def can_be_archived?
     current_year = Time.new.year
     publish_year = Date.strptime(@publish_date, '%Y-%m-%d').strftime('%Y').to_i

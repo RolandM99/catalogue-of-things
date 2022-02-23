@@ -14,8 +14,3 @@ class Label
     item.label = self
   end
 end
-
-
-
-
-
