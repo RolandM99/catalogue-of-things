@@ -7,7 +7,7 @@ describe Author do
       expect(author).to be_an_instance_of Author
     end
     it 'should check if Author first name' do
-      expect(author.first_name).to eq "Zachee"
+      expect(author.first_name).to eq 'Zachee'
     end
     it 'Should check the Author last name' do
       expect(author.last_name).to eq 'ishimwe'
