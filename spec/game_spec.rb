@@ -9,7 +9,7 @@ describe Game do
     it 'should check if it can be archived' do
       expect(game.can_be_archived?).to eq true
     end
-    it 'Should check the musicAlbum name' do
+    it 'Should check the Game multiplayer' do
       expect(game.multiplayer).to eq 'yes'
     end
   end
