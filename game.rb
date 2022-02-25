@@ -17,8 +17,3 @@ class Game < Item
     duration > 2
   end
 end
-
-# game1 = Game.new('yes', '2018/04/7', '2020-04-7')
-# puts game1.multiplayer
-# puts game1.last_played_date
-# puts game1.publish_date

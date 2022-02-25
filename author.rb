@@ -14,6 +14,3 @@ class Author
     item.author = self
   end
 end
-
-# au = Author.new('Zachee', 'ishimwe')
-# print au.first_name

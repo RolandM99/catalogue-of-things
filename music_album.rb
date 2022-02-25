@@ -16,7 +16,3 @@ class MusicAlbum < Item
     super && @on_spotify
   end
 end
-
-# music =  MusicAlbum.new(false,'Hello','2000-05-01')
-
-# puts music.can_be_archived?

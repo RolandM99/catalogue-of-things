@@ -15,5 +15,3 @@ class Book < Item
     super || @cover_state = 'bad'
   end
 end
-
-# puts Book.new(1,'Aku','good','2020-01-02')
