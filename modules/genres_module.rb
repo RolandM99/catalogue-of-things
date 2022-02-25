@@ -4,10 +4,10 @@ require_relative '../genre'
 module MusicAlbumModule
   def load_genres
     data = []
-    file = './data_files/games.json'
+    file = './data_files/genres.json'
     if File.exist?(file)
       JSON.parse(File.read(file)).each do |genre|
-        data.push(Genre.new(genre['id'], genre['name']))
+        data.push(Genre.new(genre['name']))
       end
     else
       File.write(file, [])
@@ -21,6 +21,6 @@ module MusicAlbumModule
     @music_albums.each do |genre|
       data.push({ id: genre.id, name: genre.name })
     end
-    open('./data_files/games.json', 'w') { |f| f << JSON.generate(data) }
+    open('./data_files/genres.json', 'w') { |f| f << JSON.generate(data) }
   end
 end
