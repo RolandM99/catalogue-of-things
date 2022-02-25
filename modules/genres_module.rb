@@ -1,7 +1,7 @@
 require 'json'
 require_relative '../genre'
 
-module MusicAlbumModule
+module GenreModule
   def load_genres
     data = []
     file = './data_files/genres.json'

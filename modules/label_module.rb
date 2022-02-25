@@ -4,12 +4,14 @@ require 'date'
 
 module LabelsController
   def load_labels
-    file = './json_files/labels.json'
+    file = './data_files/labels.json'
     data = []
     if File.exist?(file) && File.read(file) != ''
       JSON.parse(File.read(file)).each do |element|
-        data.push(Label.new(id: element['id'].to_i, title: element['title'], color: element['color']))
+        data.push(Label.new(element['title']))
       end
+    else
+      File.write(file, [])
     end
     data
   end
@@ -17,8 +19,8 @@ module LabelsController
   def save_labels
     data = []
     @labels.each do |label|
-      data.push({ title: label.title, color: label.color })
+      data.push({ title: label.title })
     end
-    File.write('./data_files/labels.json', JSON.generate(data))
+    open('./data_files/labels.json', 'w') { |f| f << JSON.generate(data) }
   end
 end

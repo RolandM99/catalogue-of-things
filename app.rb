@@ -16,6 +16,7 @@ require_relative './modules/authors_module'
 
 class App
   include MusicAlbumModule
+  include GenreModule
   include BooksController
   include LabelsController
   include GamesModule
@@ -146,20 +147,17 @@ class App
   end
 
   def add_label
-    print 'Please, write your favourite color:'
-    color = gets.chomp
-
-    print 'Add the title:'
+    print 'Create Label:'
     title = gets.chomp
 
-    @labels.push(Label.new(title, color))
+    @labels.push(Label.new(title))
     puts 'Label created successfully'
   end
 
   def list_labels
     puts 'There are no labels yet!' if @labels.empty?
     @labels.each do |label|
-      puts "Title: #{label.title}, Color: #{label.color}"
+      puts "Label name: #{label.title}"
     end
   end
 
