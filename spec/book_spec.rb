@@ -9,8 +9,5 @@ describe Book do
     it 'should check if it can be archived' do
       expect(book.can_be_archived?).to eq 'bad'
     end
-    it 'Should check the book id' do
-      expect(book.id).to eq 1
-    end
   end
 end
