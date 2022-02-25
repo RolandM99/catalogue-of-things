@@ -14,5 +14,3 @@ class Genre
     item.genre = self
   end
 end
-
-# genre =Genre.new('Way to the moon')

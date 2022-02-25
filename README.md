@@ -19,7 +19,8 @@ The app is develped in ruby and allows users to:
   - Rspec
   - linters
   
-
+# Presentation
+[video](https://drive.google.com/file/d/19YQiEXG1_8IPjqNqohJsoPs7-e-taUwo/view?usp=sharing)
 # Getting started 
 ![screenshot](./coding.png)
 
