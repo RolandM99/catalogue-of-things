@@ -12,13 +12,15 @@ class Main
     loop do
       menu
       option = gets.chomp
-      break if option == '10'
+      break if option == '11'
 
       @app.get_options option
     end
     @app.create_music_album
-    @app.create_books
     @app.create_games
+    @app.create_author
+    @app.save_books
+    @app.save_labels
     puts 'Thank you for using our Library!'
   end
 
@@ -34,7 +36,8 @@ class Main
     puts '7 - Add a book'
     puts '8 - Add a music album'
     puts '9 - Add a game'
-    puts '10 - Exit'
+    puts '10 - Add Label'
+    puts '11 - Exit'
   end
 end
 

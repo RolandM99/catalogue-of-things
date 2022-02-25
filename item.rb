@@ -1,11 +1,12 @@
 require 'date'
 
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date
+  attr_accessor :genre, :author, :source, :label, :publish_date, :name
   attr_reader :id, :archived
 
-  def initialize(id, publish_date, archived: true)
+  def initialize(id, name, publish_date, archived: true)
     @id = id
+    @name = name
     @publish_date = publish_date
     @archived = archived
   end
