@@ -1,7 +1,7 @@
 class Author
   attr_reader :first_name, :last_name
   attr_accessor :items
-  
+
   def initialize(first_name, last_name)
     @id = rand(1...1000)
     @items = []
@@ -15,5 +15,5 @@ class Author
   end
 end
 
-au = Author.new('Zachee', 'ishimwe')
-print au.first_name
+# au = Author.new('Zachee', 'ishimwe')
+# print au.first_name
