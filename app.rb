@@ -27,10 +27,11 @@ class App
     @games = load_games
     @music_albums = load_music_albums
     @load_genres = load_genres
-    @add_book_details = load_books
     @labels = load_labels
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
   def get_options(option)
     case option
     when '1'
@@ -58,6 +59,8 @@ class App
     end
   end
 
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/CyclomaticComplexity
   def list_all_music_album
     puts 'Music Albums:'
     @music_albums.each do |music_album|
@@ -143,9 +146,6 @@ class App
   end
 
   def add_label
-    # print 'Please, add the ID:'
-    # id = gets.chomp.to_i
-
     print 'Please, write your favourite color:'
     color = gets.chomp
 
