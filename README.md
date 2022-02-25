@@ -5,6 +5,8 @@ The app is develped in ruby and allows users to:
   - User can add books or music albums, and you can create a label or genre or author for the said item.
   - The application preserves user data by using JSON files while exiting the application.
 
+
+![screenshot](./catalog_of_my_things.png)
 # Built with:
 
     - Ruby
