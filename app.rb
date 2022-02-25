@@ -51,21 +51,23 @@ class App
       add_music_album
     when '9'
       add_game
+    when '10'
+      add_label
     else
-      puts 'Please, Enter a number between 1 and 9'
+      puts 'Please, Enter a number between 1 and 10'
     end
   end
 
   def list_all_music_album
-    puts 'Music Albums'
+    puts 'Music Albums:'
     @music_albums.each do |music_album|
-      puts "ID: #{music_album.id} Name: #{music_album.name}, Publish Date: #{music_album.publish_date},
+      puts "Name: #{music_album.name}, Publish Date: #{music_album.publish_date},
       On Spotify: #{music_album.on_spotify}"
     end
   end
 
   def list_all_games
-    puts 'Music Albums:'
+    puts 'Games:'
     @games.each do |games|
       puts "Multiplayer: #{games.multiplayer}, Publish Date: #{games.publish_date},
     Last played date: #{games.last_played_date}"
@@ -97,7 +99,7 @@ class App
     puts 'Is it available on Spotify? Y/N'
     on_spotify = gets.chomp.downcase == 'y' || false
 
-    @music_albums.push(MusicAlbum.new(name, publish_date, on_spotify))
+    @music_albums.push(MusicAlbum.new(name, on_spotify, publish_date))
     puts 'Music album created'
   end
 
@@ -111,7 +113,7 @@ class App
     puts 'Please write last played date [Enter date in format (yyyy-mm-dd)]'
     last_played_date = gets.chomp
 
-    @games.push(Game.new(multiplayer, publish_date, last_played_date))
+    @games.push(Game.new(multiplayer, last_played_date, publish_date))
     puts 'Game is created'
   end
 
@@ -129,21 +131,35 @@ class App
     publish_date = gets.chomp
     return unless publish_date
 
-    @books.push(Book.new(id, title, publisher, cover_state, publish_date))
+    @books.push(Book.new(title, publisher, cover_state, publish_date))
     puts 'Book created successfully'
   end
 
   def list_books
     puts 'There are no books yet! Please add books.' if @books.empty?
     @books.each do |book|
-      puts "ID: #{book.id} Name: #{book.name}, Publish Date: #{book.publish_date}, cover_state: #{book.cover_state}"
+      puts "Title: #{book.name}, Publish Date: #{book.publish_date}, cover_state: #{book.cover_state}"
     end
+  end
+
+  def add_label
+    # print 'Please, add the ID:'
+    # id = gets.chomp.to_i
+
+    print 'Please, write your favourite color:'
+    color = gets.chomp
+
+    print 'Add the title:'
+    title = gets.chomp
+
+    @labels.push(Label.new(title, color))
+    puts 'Label created successfully'
   end
 
   def list_labels
     puts 'There are no labels yet!' if @labels.empty?
     @labels.each do |label|
-      puts "ID: #{label['id']}, Title: #{label['title']}, Color: #{label['color']}"
+      puts "Title: #{label.title}, Color: #{label.color}"
     end
   end
 
