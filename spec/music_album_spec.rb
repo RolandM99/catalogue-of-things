@@ -7,10 +7,10 @@ describe MusicAlbum do
       expect(music).to be_an_instance_of MusicAlbum
     end
     it 'should check if it can be archived' do
-      expect(music.can_be_archived?).to eq true
+      expect(music.can_be_archived?).to eq 'Hello'
     end
     it 'Should check the musicAlbum name' do
-      expect(music.name).to eq 'Hello'
+      expect(music.name).to eq true
     end
   end
 end
